@@ -1,0 +1,138 @@
+{
+  "inputs": {
+    "5s": [
+      "/home/eley/Projects/epileptic_seizure/results/progressive_stage3_mainline170_5s_stage3_gpu0",
+      "/home/eley/Projects/epileptic_seizure/results/progressive_stage3_mainline170_5s_stage3_gpu1"
+    ],
+    "7s": [
+      "/home/eley/Projects/epileptic_seizure/results/progressive_stage3_mainline170_7s_stage3_gpu0",
+      "/home/eley/Projects/epileptic_seizure/results/progressive_stage3_mainline170_7s_stage3_gpu1"
+    ],
+    "9s": [
+      "/home/eley/Projects/epileptic_seizure/results/progressive_stage3_mainline170_9s_stage3_gpu0",
+      "/home/eley/Projects/epileptic_seizure/results/progressive_stage3_mainline170_9s_stage3_gpu1"
+    ]
+  },
+  "base_scale": "7s",
+  "candidates": {
+    "7only": {
+      "5s": 0.0,
+      "7s": 1.0,
+      "9s": 0.0
+    },
+    "equal": {
+      "5s": 1.0,
+      "7s": 1.0,
+      "9s": 1.0
+    },
+    "7heavy": {
+      "5s": 0.5,
+      "7s": 2.0,
+      "9s": 0.5
+    },
+    "5_7": {
+      "5s": 1.0,
+      "7s": 1.0,
+      "9s": 0.0
+    },
+    "7_9": {
+      "5s": 0.0,
+      "7s": 1.0,
+      "9s": 1.0
+    },
+    "5heavy": {
+      "5s": 2.0,
+      "7s": 1.0,
+      "9s": 0.5
+    },
+    "9heavy": {
+      "5s": 0.5,
+      "7s": 1.0,
+      "9s": 2.0
+    },
+    "5_7heavy": {
+      "5s": 1.0,
+      "7s": 2.0,
+      "9s": 0.0
+    },
+    "7_9heavy": {
+      "5s": 0.0,
+      "7s": 2.0,
+      "9s": 1.0
+    }
+  },
+  "thresholds": [
+    0.05,
+    0.1,
+    0.15,
+    0.2,
+    0.25,
+    0.3,
+    0.35,
+    0.4,
+    0.45,
+    0.5,
+    0.55,
+    0.6,
+    0.65,
+    0.7,
+    0.75,
+    0.8,
+    0.85,
+    0.9,
+    0.95
+  ],
+  "min_alarm_windows": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    8,
+    10
+  ],
+  "score_normalization": "validation_interictal_ecdf",
+  "selection_strategy": "balanced_event_far",
+  "target_event_sensitivity": 0.95,
+  "folds_evaluated": 170,
+  "folds_skipped": 0,
+  "candidate_counts": {
+    "9heavy": 29,
+    "7only": 54,
+    "7heavy": 6,
+    "equal": 33,
+    "7_9heavy": 1,
+    "5heavy": 17,
+    "5_7": 15,
+    "7_9": 14,
+    "5_7heavy": 1
+  },
+  "selected_weight_validation_calibrated": {
+    "folds": 170,
+    "sample_acc_mean": 0.4186439591338142,
+    "sample_acc_std": 0.2800141348738227,
+    "sample_f1_mean": 0.3408512852696503,
+    "sample_f1_std": 0.2500166792396975,
+    "sample_sensitivity_mean": 0.7840024734879918,
+    "sample_sensitivity_std": 0.3069998158105149,
+    "sample_specificity_mean": 0.3443132741808545,
+    "sample_specificity_std": 0.35167433289293915,
+    "event_detected_mean": 0.8470588235294118,
+    "event_detected_std": 0.35993078919478483,
+    "false_alarm_windows_mean": 516.2470588235294,
+    "false_alarm_windows_std": 480.049027052136,
+    "false_alarm_events_mean": 1.723529411764706,
+    "false_alarm_events_std": 1.5068585989966816,
+    "false_alarm_rate_per_hour_mean": 1.201546988792267,
+    "false_alarm_rate_per_hour_std": 0.703662626273734,
+    "event_warning_time_min_mean": 22.752027777777776,
+    "event_warning_time_min_std": 10.312771925670374
+  },
+  "outputs": {
+    "selected_fusion_weights": "/home/eley/Projects/epileptic_seizure/results/progressive_stage3_mainline170_multiscale_valselected_fusion_5s7s9s/selected_fusion_weights.csv",
+    "selected_weight_fold_event_metrics": "/home/eley/Projects/epileptic_seizure/results/progressive_stage3_mainline170_multiscale_valselected_fusion_5s7s9s/selected_weight_fold_event_metrics.csv",
+    "candidate_validation_sweep": "/home/eley/Projects/epileptic_seizure/results/progressive_stage3_mainline170_multiscale_valselected_fusion_5s7s9s/candidate_validation_sweep.csv",
+    "skipped_folds": "/home/eley/Projects/epileptic_seizure/results/progressive_stage3_mainline170_multiscale_valselected_fusion_5s7s9s/skipped_folds.csv"
+  }
+}

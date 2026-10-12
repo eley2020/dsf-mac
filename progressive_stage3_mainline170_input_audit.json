@@ -1,0 +1,15 @@
+{
+  "5s": {
+    "folds": 170,
+    "validation_signatures_match_mainline": true
+  },
+  "7s": {
+    "folds": 170,
+    "validation_signatures_match_mainline": true
+  },
+  "9s": {
+    "folds": 170,
+    "validation_signatures_match_mainline": true
+  },
+  "common_folds": 170
+}

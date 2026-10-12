@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+title: "DSF-MAC: Validation-selected multi-scale spectral risk estimation and causal alarm control"
+type: software
+message: "If you use this code, please cite the associated Biomedical Signal Processing and Control manuscript."
+authors:
+  - family-names: Zhang
+    given-names: Jian
+    orcid: https://orcid.org/0009-0001-8651-0524
+version: 0.1.0
+date-released: 2026-09-29
+repository-code: https://github.com/zhjmaster/dsf-mac
+license: "MIT"

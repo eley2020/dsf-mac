@@ -1,0 +1,88 @@
+{
+  "release": "DSF-MAC mainline reproduction",
+  "paper": "Validation-Selected Multi-Scale Spectral Risk Estimation and Causal Alarm Control for Patient-Specific EEG Seizure Pre-Warning",
+  "dataset": "CHB-MIT",
+  "folds": 170,
+  "subjects": 18,
+  "channels": [
+    "FP1-F7",
+    "F7-T7",
+    "T7-P7",
+    "P7-O1",
+    "FP1-F3",
+    "F3-C3",
+    "C3-P3",
+    "P3-O1",
+    "FP2-F4",
+    "F4-C4",
+    "C4-P4",
+    "P4-O2",
+    "FP2-F8",
+    "F8-T8",
+    "T8-P8",
+    "FZ-CZ",
+    "CZ-PZ"
+  ],
+  "sampling_rate_hz": 256,
+  "resampling": "none",
+  "window_scales_sec": [
+    5,
+    7,
+    9
+  ],
+  "window_stride_sec": "equal to window length; no overlap",
+  "normalization": "per-window z-score",
+  "additional_filtering": "none in the production raw-waveform path; source EDF acquisition filters retained",
+  "augmentation": "disabled",
+  "risk_estimator": {
+    "model": "progressive_internal_dsf",
+    "stage": 3,
+    "epochs": 10,
+    "batch_size": 64,
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "weight_decay": 0.0001,
+    "seed": 0,
+    "split_seed": 0,
+    "checkpoint_selection": "validation_auc"
+  },
+  "validation": {
+    "mode": "event",
+    "event_count": 1,
+    "minimum_positive_windows": 30,
+    "negative_ratio": 1.0,
+    "negative_mode": "contiguous"
+  },
+  "alarm_controller": {
+    "variant": "multi_timescale_tcn_suppression_cooldown",
+    "epochs": 80,
+    "learning_rate": 0.05,
+    "seed": 3,
+    "score_normalization": "validation_interictal_ecdf",
+    "threshold": 0.4,
+    "minimum_alarm_windows": 1,
+    "window_sec": 7,
+    "refractory_min": 30.0,
+    "cooldown_decay_floor": 0.6
+  },
+  "protocol": {
+    "sop_min": 30,
+    "sph_min": 5,
+    "interictal_exclusion_hours": 4,
+    "independent_event_gap_min": 275
+  },
+  "software": {
+    "python": "3.12.3",
+    "pytorch": "2.12.1+cu126",
+    "cuda": "12.6",
+    "gpu": "2 x NVIDIA TITAN V"
+  },
+  "statistics": {
+    "bootstrap_replicates": 10000,
+    "bootstrap_seed_base": 20260812,
+    "paired_tests": [
+      "exact two-sided sign test",
+      "Wilcoxon where specified"
+    ]
+  }
+}
