@@ -1,0 +1,96 @@
+{
+  "out_prefix": "progressive_stage3_mainline170",
+  "init_prefix": "progressive_stage2_mainline170",
+  "stage": 3,
+  "init_stage": 2,
+  "scales": [
+    5,
+    7,
+    9
+  ],
+  "partitions": [
+    0,
+    1
+  ],
+  "epochs": 10,
+  "batch_size": 64,
+  "lr": 0.001,
+  "seed": 0,
+  "split_seed": 0,
+  "checkpoint_selection": "validation_auc",
+  "validation_event_count": 1,
+  "jobs": [
+    {
+      "scale": 5,
+      "partition": 0,
+      "gpu": 0,
+      "status": "completed",
+      "returncode": 0,
+      "init_root": "results/progressive_stage2_mainline170_5s_stage2_gpu0",
+      "out_dir": "results/progressive_stage3_mainline170_5s_stage3_gpu0",
+      "predictions": 84,
+      "elapsed_sec": 3719.3,
+      "log": "logs/progressive_stage3_mainline170_5s_gpu0.log"
+    },
+    {
+      "scale": 5,
+      "partition": 1,
+      "gpu": 1,
+      "status": "completed",
+      "returncode": 0,
+      "init_root": "results/progressive_stage2_mainline170_5s_stage2_gpu1",
+      "out_dir": "results/progressive_stage3_mainline170_5s_stage3_gpu1",
+      "predictions": 86,
+      "elapsed_sec": 3711.4,
+      "log": "logs/progressive_stage3_mainline170_5s_gpu1.log"
+    },
+    {
+      "scale": 7,
+      "partition": 0,
+      "gpu": 0,
+      "status": "completed",
+      "returncode": 0,
+      "init_root": "results/progressive_stage2_mainline170_7s_stage2_gpu0",
+      "out_dir": "results/progressive_stage3_mainline170_7s_stage3_gpu0",
+      "predictions": 84,
+      "elapsed_sec": 3724.4,
+      "log": "logs/progressive_stage3_mainline170_7s_gpu0.log"
+    },
+    {
+      "scale": 7,
+      "partition": 1,
+      "gpu": 1,
+      "status": "completed",
+      "returncode": 0,
+      "init_root": "results/progressive_stage2_mainline170_7s_stage2_gpu1",
+      "out_dir": "results/progressive_stage3_mainline170_7s_stage3_gpu1",
+      "predictions": 86,
+      "elapsed_sec": 3684.3,
+      "log": "logs/progressive_stage3_mainline170_7s_gpu1.log"
+    },
+    {
+      "scale": 9,
+      "partition": 0,
+      "gpu": 0,
+      "status": "completed",
+      "returncode": 0,
+      "init_root": "results/progressive_stage2_mainline170_9s_stage2_gpu0",
+      "out_dir": "results/progressive_stage3_mainline170_9s_stage3_gpu0",
+      "predictions": 84,
+      "elapsed_sec": 4229.0,
+      "log": "logs/progressive_stage3_mainline170_9s_gpu0.log"
+    },
+    {
+      "scale": 9,
+      "partition": 1,
+      "gpu": 1,
+      "status": "completed",
+      "returncode": 0,
+      "init_root": "results/progressive_stage2_mainline170_9s_stage2_gpu1",
+      "out_dir": "results/progressive_stage3_mainline170_9s_stage3_gpu1",
+      "predictions": 86,
+      "elapsed_sec": 4215.4,
+      "log": "logs/progressive_stage3_mainline170_9s_gpu1.log"
+    }
+  ]
+}
